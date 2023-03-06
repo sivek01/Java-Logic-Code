@@ -1,0 +1,28 @@
+  public static void main(String[] args) {
+		Parent parent = new Child();
+
+		String str = "abacbcadddfga";
+		String st = "";
+		char[] charArray = str.toCharArray();
+		Arrays.sort(charArray);
+		int count = 1;
+		System.out.println(new String(charArray));
+		for (int i = 0; i < charArray.length; i++) {
+
+			int temp = i;
+
+			if (i <= charArray.length - 2) {
+				if (charArray[i] == charArray[temp + 1]) {
+					count++;
+
+				} else {
+					System.out.print(charArray[i-1]+""+count);
+					count = 1;
+				}
+				
+			}
+			else {
+				System.out.print(charArray[i-1]+""+count);
+			}
+		}
+	}
